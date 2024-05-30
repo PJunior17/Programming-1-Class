@@ -13,7 +13,17 @@
  * 	     5/30/24 Rev 1.1: Formatted the loan reciept to make the amounts align with eachother and wrote description
  *
  * The complete Chart based on the requirements of the assignment example:
- *
+ * Load Amount: $1000000
+ * Annual interest rate (in the format 0.12 (for 12%): .24
+ * Number of monthly payments to be made: 24
+ * - - Loan Report - -
+
+ * Loan Amount:                           $1000000.00
+ * Monthly Interest Rate:                  2.00%
+ * Number of Payments:                     24
+ * Monthly Payment:                       $52871.14
+ * Amount Paid Back:                      $1268907.25
+ * Interest Paid:                         $268907.25
  */
 
 #include <iostream>
@@ -41,8 +51,8 @@ int main() {
 	std::cout << std::fixed;
 	std::cout << "- - Loan Report - -\n\n";
 	std::cout << "Loan Amount:" << std::setprecision(2) << std::setw(28) << "$" << loan_amount << std::endl;
-	std::cout << "Monthly Interest Rate:" << std::setprecision(2) << std::setw(27) << monthly_interest_rate << "%" << std::endl;
-	std::cout << "Number of Payments:" << std::setprecision(2) << std::setw(28) << num_payments << std::endl;
+	std::cout << "Monthly Interest Rate:" << std::setprecision(2) << std::setw(22) << monthly_interest_rate << "%" << std::endl;
+	std::cout << "Number of Payments:" << std::setprecision(2) << std::setw(23) << num_payments << std::endl;
 	std::cout << "Monthly Payment:" << std::setprecision(2) << std::setw(24) << "$" << payment << std::endl;
 	std::cout << "Amount Paid Back:" << std::setprecision(2) << std::setw(23) << "$" << amount_paid_back << std::endl;
 	std::cout << "Interest Paid:" << std::setprecision(2) << std::setw(26) << "$" << interest_paid << std::endl;
