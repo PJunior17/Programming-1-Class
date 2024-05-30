@@ -1,3 +1,21 @@
+/* Programmer Name: Phiron Hin Jr
+ * File Name: phjA1_3.cpp
+ * Summary: This code will take the user inputs: loan amount, annual interest rate, and number of payments. Then it 
+ * will calculate the monthly payments the user has to make and generate a loan report. The loan report will consist of
+ * information the user has entered, how much monthly payments they will have to make, and how much money they will end 
+ * up paying due to interest.  
+ * Challenging: The formatting of the loan report was quite challenging as I have never worked with iomanip before. 
+ * It was also interesting to see that there is a function to set the precision for decimals where as in C you would
+ * put something like printf("%.2f", some_float); I do like that there is a function for this but it feels like it 
+ * just adds verbosity compared to C.
+ * Time: This took about 30 minutes to code
+ * Revision: 5/28/24 Rev 1.0: Wrote base code to make the function work
+ * 	     5/30/24 Rev 1.1: Formatted the loan reciept to make the amounts align with eachother and wrote description
+ *
+ * The complete Chart based on the requirements of the assignment example:
+ *
+ */
+
 #include <iostream>
 #include <cmath>
 #include <iomanip>
@@ -22,14 +40,12 @@ int main() {
 	
 	std::cout << std::fixed;
 	std::cout << "- - Loan Report - -\n\n";
-	std::cout << "Loan Amount: $" << std::setprecision(2) << loan_amount << std::endl;
-	std::cout << "Monthly Interest Rate: " << std::setprecision(2) << monthly_interest_rate << "%" << std::endl;
-	std::cout << "Number of Payments: " << std::setprecision(2) << num_payments << std::endl;
-	std::cout << "Monthly Payment: $" << std::setprecision(2) << payment << std::endl;
-	std::cout << "Amount Paid Back $" << std::setprecision(2) << amount_paid_back << std::endl;
-	std::cout << "Interest Paid $" << std::setprecision(2) << interest_paid << std::endl;
-
-	
+	std::cout << "Loan Amount:" << std::setprecision(2) << std::setw(28) << "$" << loan_amount << std::endl;
+	std::cout << "Monthly Interest Rate:" << std::setprecision(2) << std::setw(27) << monthly_interest_rate << "%" << std::endl;
+	std::cout << "Number of Payments:" << std::setprecision(2) << std::setw(28) << num_payments << std::endl;
+	std::cout << "Monthly Payment:" << std::setprecision(2) << std::setw(24) << "$" << payment << std::endl;
+	std::cout << "Amount Paid Back:" << std::setprecision(2) << std::setw(23) << "$" << amount_paid_back << std::endl;
+	std::cout << "Interest Paid:" << std::setprecision(2) << std::setw(26) << "$" << interest_paid << std::endl;
 
 	return 0;
 }
