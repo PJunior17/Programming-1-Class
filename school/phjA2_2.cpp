@@ -3,17 +3,17 @@
 
 int main() {
 	float balance;
-	std::cout << "Enter the starting balance on the account: ";
+	std::cout << "Enter the starting balance on the account: $";
 	std::cin >> balance;	
 	
 	float interest_rate;
-	std::cout << "Enter annual interest rate: ";
+	std::cout << "Enter annual interest rate (e.g. 0.04): ";
 	std::cin >> interest_rate;
 	std::cout << "\n";
 	
 	int month = 1;
 	float start_month_balance = balance;
-	float end_month_balance = start_month_balance;
+	float end_month_balance = balance;
 	float monthly_interest_rate = interest_rate / 12;
 	float monthly_interest_added;
 
@@ -23,6 +23,7 @@ int main() {
 	do {
 		std::cout << std::fixed;
 		std::cout << "Month " << month << std::endl;
+		
 		float monthly_deposit;
 		std::cout << "Total deposited for the month: $";
 		std::cin >> monthly_deposit;
@@ -47,12 +48,12 @@ int main() {
 	} while(month < 4);
 	
 	std::cout << "Quarterly Savings Account Statement\n\n";
-	std::cout << "Starting Balance: " << balance << std::endl;
-	std::cout << "Total Deposits: " << total_deposited << std::endl;
-	std::cout << "Total Withdrawls: " << total_withdrawn << std::endl;
-	std::cout << "Total Interest: " << total_interest << std::endl;
+	std::cout << "Starting Balance: " << std::setprecision(2) << std::setw(12) << balance << std::endl;
+	std::cout << "Total Deposits: " << std::setprecision(2) << std::setw(14)<< total_deposited << std::endl;
+	std::cout << "Total Withdrawls: " << std::setprecision(2) << std::setw(12)<< total_withdrawn << std::endl;
+	std::cout << "Total Interest: " << std::setprecision(2) << std::setw(14)<< total_interest << std::endl;
 	std::cout << "________________" << std::endl;
-	std::cout << "Ending Balance: " << end_month_balance << std::endl;
+	std::cout << "Ending Balance: " << std::setprecision(2) << std::setw(13)<< end_month_balance << std::endl;
 
 	std::cout << "----------------------------------------------------------\n";
 
