@@ -2,21 +2,25 @@
 #include <fstream>
 #include <string>
 
+//GLOBALS
+int num_days;
+float daily_rate;
+float charge_services;
+float charge_medication;
+
+//Function Prototypes
 float validate_inputs(float);
 float patient_charges(int, float, float, float);
 float patient_charges(float, float);
+void confirmed_inpatient();
+void confirmed_outpatient();
 
 int main() {
-	int num_days;
-	float daily_rate;
-	float charge_services;
-	float charge_medication;
+	confirmed_inpatient();
+	return 0;
+}
 
-	string patient_type;
-	std::cout << "inpatient or outpatient? ";
-	std::cin >> patient_type;
-
-	if(patient_type == "inpatient") {
+void confirmed_inpatient() {
 		std::cout << "Number of days in hospital: ";
 		std::cin >> num_days;
 
@@ -28,16 +32,5 @@ int main() {
 
 		std::cout << "Medication charges: $";
 		std::cin >> charge_medication;
-	}
-
-	if(patient_type == "outpatient") {
-		std::cout << "Lab fees and other service charges: $";
-		std::cin >> charge_services;
-
-		std::cout << "Medication charges: $";
-		std::cin >> charge_medication;
-	}
-
-	return 0;
 }
 
