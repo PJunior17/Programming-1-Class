@@ -6,7 +6,7 @@
 void display_seating_chart(std::string seats[15][30]);
 void display_seating_prices();
 void update_seating_prices();
-void request_tickets();
+void request_tickets(std::string seats[15][30]);
 void print_sales_report();
 
 int main() {
@@ -48,7 +48,8 @@ int main() {
 				update_seating_prices();
 				break;
 			case(4):
-				request_tickets();
+				request_tickets(seats);
+				display_seating_chart(seats);
 				break;
 			case(5):
 				print_sales_report();
@@ -83,8 +84,15 @@ void update_seating_prices() {
 	return;
 }
 
-void request_tickets() {
-	return;
+void request_tickets(std::string seats[15][30]) {
+	int row;
+	int col;
+	std::cout << "Please enter the row of the seat you would like: ";
+	std::cin >> row;
+	std::cout << "Please enter the seat number you would like: ";
+	std::cin >> col;
+
+	seats[row-1][col-1] = " *";
 }
 
 void print_sales_report() {
